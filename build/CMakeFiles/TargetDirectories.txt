@@ -1,5 +1,0 @@
-/data/dev/ivl/build/cmake/CMakeFiles/ivl.dir
-/data/dev/ivl/build/modules/ivl-cv/CMakeFiles/ivl-cv.dir
-/data/dev/ivl/build/modules/ivl-lina/CMakeFiles/ivl-lina.dir
-/data/dev/ivl/build/modules/ivl-qt/CMakeFiles/ivl-qt.dir
-/data/dev/ivl/build/cmake/CMakeFiles/uninstall.dir

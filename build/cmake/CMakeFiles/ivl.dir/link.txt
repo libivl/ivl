@@ -1,1 +1,0 @@
-/usr/bin/gcc  -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libivl.so -o libivl.so CMakeFiles/ivl.dir/dummy/ivl_dummy.cpp.o -lpthread -lstdc++ -lm 
