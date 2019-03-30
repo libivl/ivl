@@ -1,0 +1,18 @@
+/** \mainpage IVL lib
+
+<h3>Testing Main page</h3>
+
+IVL library contains the following packages:
+<ul>
+  <li>Package 1<li>
+  <li>Package 2<li>
+  <li>Package 3<li>
+  <li>Package 4<li>
+  <li>Package 5<li>
+</ul>
+
+After doing that, you will find the HTML documentation in the doc/html/ subdirectory of the build directory.
+
+<h2>That's all</h2>
+
+*/

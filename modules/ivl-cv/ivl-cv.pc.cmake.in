@@ -1,0 +1,15 @@
+# Package Information for pkg-config
+
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=@INSTALL_LIB_DIR@
+includedir=@INSTALL_INCLUDE_DIR@
+
+Name: ivl-cv
+Description: An OpenCV extension module for ivl.
+Version: @IVL_VERSION@
+Requires: ivl opencv
+Libs: -L${libdir} @PKG_LIBS@
+Cflags: -DIVL_OPENCV -I${includedir} @PKG_CFLAGS@
+
+

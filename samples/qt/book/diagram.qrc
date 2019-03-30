@@ -1,0 +1,13 @@
+<RCC>
+<qresource>
+    <file>diagram_images/bringtofront.png</file>
+    <file>diagram_images/colors.png</file>
+    <file>diagram_images/copy.png</file>
+    <file>diagram_images/cut.png</file>
+    <file>diagram_images/delete.png</file>
+    <file>diagram_images/link.png</file>
+    <file>diagram_images/node.png</file>
+    <file>diagram_images/paste.png</file>
+    <file>diagram_images/sendtoback.png</file>
+</qresource>
+</RCC>

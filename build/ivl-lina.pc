@@ -1,0 +1,14 @@
+# Package Information for pkg-config
+
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: ivl-lina
+Description: A linear algebra module for ivl.
+Version: 0.9.1
+Requires: ivl
+Libs: -L${libdir} -L/usr/lib -llapack -livl-lina
+Cflags: -I${includedir} 
+

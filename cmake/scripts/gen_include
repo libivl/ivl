@@ -1,0 +1,39 @@
+#!/bin/bash
+xa=
+if [ "$1" == "hpp" ]
+then
+	xa='-and -iname *.h* -and -not -iname *_impl*'
+elif [ "$1" == "cpp" ]
+then
+	xa='-and -iname *.c*'
+fi
+
+add=0
+if [ "$2" == "add" ]
+then
+	add=1
+fi
+
+ov=out
+
+find . -not -ipath '*/.*' -and -not -iname '*.txt' -and -not -iname '*CMakeLists*' $xa |(
+while read x
+do
+	if [ "-f" "$x" ]
+	then
+		if [ $add == 1 ]
+		then
+			echo set\($ov \$\{$ov\} \"$3$x\"\)
+		else
+			echo INSTALL\(FILES $x DESTINATION \$\{INSTALL_INCLUDE_DIR\}/$(dirname $x)\)
+		fi
+	fi
+
+done
+)
+
+if [ $add == 1 ]
+then
+	echo set\($ov \$\{$ov\} PARENT_SCOPE\)
+fi
+

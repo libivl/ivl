@@ -1,0 +1,14 @@
+<RCC>
+<qresource>
+	<file>flowchart_images/data.png</file>
+	<file>flowchart_images/decision.png</file>
+	<file>flowchart_images/document.png</file>
+	<file>flowchart_images/manual-input.png</file>
+	<file>flowchart_images/manual-operation.png</file>
+	<file>flowchart_images/on-page-reference.png</file>
+	<file>flowchart_images/predefined-process.png</file>
+	<file>flowchart_images/preparation.png</file>
+	<file>flowchart_images/printer.png</file>
+	<file>flowchart_images/process.png</file>
+</qresource>
+</RCC>

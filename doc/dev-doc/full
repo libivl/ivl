@@ -1,0 +1,16 @@
+#!/bin/bash
+compiler=g++
+ivl=/data/dev/ivl
+mod=$ivl/modules
+build=$ivl/build/modules
+pkg="pkg-config --cflags --libs"
+core="-I$ivl/include -lpthread -Os -lstdc++"
+cv="-I$mod/ivl-cv/src -L$build/ivl-cv `$pkg opencv` -livl-cv"
+lina="-I$mod/ivl-lina/src -L$build/ivl-lina -llapack -livl-lina"
+qt="-I$mod/ivl-qt/src -L$build/ivl-qt `$pkg QtCore QtGui` -livl-qt"
+# flags="$core $cv $lina $qt"
+flags="$core $qt"
+output=$(echo $1 | sed -e 's/\..*//g')
+shift
+echo $compiler -o $output $flags $output.cpp $@
+$compiler -o $output $flags $output.cpp $@ && ./$output

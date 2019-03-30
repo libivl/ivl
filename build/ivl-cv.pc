@@ -1,0 +1,15 @@
+# Package Information for pkg-config
+
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: ivl-cv
+Description: An OpenCV extension module for ivl.
+Version: 0.9.1
+Requires: ivl opencv
+Libs: -L${libdir} 
+Cflags: -DIVL_OPENCV -I${includedir} 
+
+

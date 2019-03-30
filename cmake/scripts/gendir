@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo set \(my_SRCS \"\"\)
+
+for x in *
+do
+	if [ "-d" "$x" ]
+	then
+		(
+		echo add_subdirectory\($x\)
+		echo get_directory_property\(tmp_SRCS DIRECTORY $x DEFINITION my_SRCS\)
+		echo ADD_PREFIX\(\"$x/\" \"\$\{tmp_SRCS\}\" tmp_SRCS\)
+		echo set \(my_SRCS \$\{my_SRCS\} \$\{tmp_SRCS\}\)
+		echo set \(tmp_SRCS \"\"\)
+		)
+		
+
+	fi
+		
+done
+
+
+
+

@@ -1,0 +1,13 @@
+<RCC>
+<qresource>
+    <file>spreadsheet_images/icon.png</file>
+    <file>spreadsheet_images/new.png</file>
+    <file>spreadsheet_images/open.png</file>
+    <file>spreadsheet_images/save.png</file>
+    <file>spreadsheet_images/cut.png</file>
+    <file>spreadsheet_images/copy.png</file>
+    <file>spreadsheet_images/paste.png</file>
+    <file>spreadsheet_images/find.png</file>
+    <file>spreadsheet_images/gotocell.png</file>
+</qresource>
+</RCC>

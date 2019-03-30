@@ -1,0 +1,7 @@
+<RCC>
+<qresource>
+    <file>plotter_images/zoomin.png</file>
+    <file>plotter_images/zoomout.png</file>
+    <file>plotter_data/in1.txt</file>
+</qresource>
+</RCC>

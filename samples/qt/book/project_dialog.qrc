@@ -1,0 +1,7 @@
+<RCC>
+<qresource>
+	<file>project_images/left_arrow.png</file>
+	<file>project_images/person.png</file>
+	<file>project_images/right_arrow.png</file>
+</qresource>
+</RCC>

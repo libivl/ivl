@@ -1,0 +1,12 @@
+<RCC>
+<qresource>
+    <file>editor_images/copy.png</file>
+    <file>editor_images/cut.png</file>
+    <file>editor_images/document.png</file>
+    <file>editor_images/icon.png</file>
+    <file>editor_images/new.png</file>
+    <file>editor_images/open.png</file>
+    <file>editor_images/paste.png</file>
+    <file>editor_images/save.png</file>
+</qresource>
+</RCC>

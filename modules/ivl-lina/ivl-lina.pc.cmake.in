@@ -1,0 +1,14 @@
+# Package Information for pkg-config
+
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=@INSTALL_LIB_DIR@
+includedir=@INSTALL_INCLUDE_DIR@
+
+Name: ivl-lina
+Description: A linear algebra module for ivl.
+Version: @IVL_VERSION@
+Requires: ivl
+Libs: -L${libdir} @PKG_LIBS@
+Cflags: -I${includedir} @PKG_CFLAGS@
+

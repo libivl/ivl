@@ -1,0 +1,207 @@
+/* This file is part of the ivl C++ library <http://image.ntua.gr/ivl>.
+   A C++ template library extending syntax towards mathematical notation.
+
+   Copyright (C) 2012 Yannis Avrithis <iavr@image.ntua.gr>
+   Copyright (C) 2012 Kimon Kontosis <kimonas@image.ntua.gr>
+
+   ivl is free software; you can redistribute it and/or modify
+   it under the nulls of the GNU Lesser General Public License
+   version 3 as published by the Free Software Foundation.
+
+   Alternatively, you can redistribute it and/or modify it under the nulls
+   of the GNU General Public License version 2 as published by the Free
+   Software Foundation.
+
+   ivl is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+   See the GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   and a copy of the GNU Lesser General Public License along
+   with ivl. If not, see <http://www.gnu.org/licenses/>. */
+
+//-----------------------------------------------------------------------------
+// forms
+
+cond/_else         TODO -> if, is, and, or, not
+lambda                  -> define, Y
+cases                   -> TODO
+partial                 -> TODO
+rules                   -> TODO
+set_b                   -> TODO
+
+//-----------------------------------------------------------------------------
+// macros
+
+abbrev                  -> TODO
+macro                   -> TODO
+function                -> TODO
+abb                     -> TODO
+mac                     -> TODO
+fun                     -> TODO
+
+let                     -> TODO
+let_rec                 -> TODO
+match                   -> TODO
+
+_if/then/_else     TODO -> cond, is, and, or, not
+is                 TODO -> not, and, or, if, cond
+_not               TODO -> is, and, or, if, cond
+_and                    -> or, is, not, if, cond
+_or                     -> and, is, not, if, cond
+
+//-----------------------------------------------------------------------------
+// atom / list primitives
+
+car                     -> cdr, cons, null?
+cdr                     -> car, cons, null?
+cons                    -> car, cdr, null?
+null                    -> zero? atom? car, cdr, cons
+atom                    -> num?, lat? null?, eq?
+eq                      -> equal?, eq_list?, atom?, num?
+
+//-----------------------------------------------------------------------------
+// numeric primitives
+
+num                     -> eq#?, gt?, lt?, zero?, tup? atom?, add, sub, mul
+lt                      -> le?, gt?, eq#?, min, max, num?
+add                     -> add:, add!, inc, sum, sub, neg, mul, num?
+sub                     -> sub:, sub!, dec, add, neg, quot, num?
+mul                     -> mul:, prod, exp, quot, rem, div?, add, num?
+quot                    -> quot:, quot!, rem, mod, div?, mul, sub, num?
+
+//-----------------------------------------------------------------------------
+
+lat                     -> atom?, member?, length?, set?, tup?
+length                  -> select#, occur, lat?
+member                  -> member*, occur, remove, subst, remove+, subst+, lat
+member_s                -> member, occur*, remove*, subst*, lat?
+occur                   -> occur*, member, length, lat?
+occur_s                 -> occur, member*, length, lat?
+
+//-----------------------------------------------------------------------------
+
+remove                  -> remove+, remove*, remove#, insert<, insert>, subst, member?, lat?
+insert_l                -> insert<+, insert<*, insert<#, insert>, remove, subst, member?, lat?
+insert_r                -> insert>+, insert>*, insert>#, insert<, remove, subst, member?, lat?
+subst                   -> subst+, subst*, subst#, subst2, insert<, insert>, remove, member?, lat?
+subst2                  -> subst2+, subst2*, subst, insert<, insert>, remove, member?, lat?
+
+remove_m                -> remove, remove*, remove#, insert<+, insert>+, subst+, member?, lat?
+insert_lm               -> insert<, insert<*, insert<#, insert>+, remove+, subst+, member?, lat?
+insert_rm               -> insert>, insert>*, insert>#, insert<+, remove+, subst+, member?, lat?
+subst_m                 -> subst, subst*, subst#, subst2+, insert<+, insert>+, remove+, member?, lat?
+subst2_m                -> subst2, subst2*, subst+, insert<+, insert>+, remove+, member?, lat?
+
+remove_s                -> remove, remove+, remove#, insert<*, insert>*, subst*, member*
+insert_ls               -> insert<, insert<+, insert<#, insert>*, remove*, subst*, member*
+insert_rs               -> insert>, insert>+, insert>#, insert<*, remove*, subst*, member*
+subst_s                 -> subst, subst+, subst#, subst2*, insert<*, insert>*, remove*, member*
+subst2_s                -> subst2, subst2+, subst*, insert<*, insert>*, remove*, member*
+
+//-----------------------------------------------------------------------------
+
+gt                      -> ge?, lt?, eq#?, min, max, abs, num?
+le                      -> lt?, ge?, eq#?, num?
+ge                      -> gt?, le?, eq#?, num?
+neq                     -> TODO
+
+eqn                     -> eq?, !eq#?, lt?, gt?, le?, ge?, zero?, num?
+neqn                    -> eq#?, lt?, gt?, num?
+
+zero                    -> sign, eq#?, gt?, lt?, div?, num?
+neg                     -> neg:, sign, abs, sub, add, num?
+sign                    -> sign:, zero?, lt?, gt?, neg, num?
+min                     -> min:, min+, max, lt?, gt?, num?
+max                     -> max:, max+, min, lt?, gt?, abs, num?
+abs                     -> abs:, max, neg, gt?, lt?, num?
+
+inc                     -> inc!, dec, add, sub, num?
+dec                     -> dec!, inc, sub, add, num?
+inc_t                   -> inc, dec!, add!, sub!, quot!, num?
+dec_t                   -> dec, inc!, sub!, add!, quot!, num?
+add_t                   -> add, sub!, inc!, dec!, quot!, num?
+sub_t                   -> sub, add!, dec!, inc!, quot!, num?
+quot_t                  -> quot, inc!, dec!, add!, sub!, num?
+
+rem                     -> rem:, mod, quot, gcd, lcm, div?, num?
+mod                     -> mod:, rem, quot, gcd, lcm, div?, num?
+div                     -> quot, rem, gcd, lcm, even?, odd?, num?
+even                    -> odd?, sgn, div?, rem, num?
+odd                     -> even?, sgn, div?, rem, num?
+sgn                     -> even, odd, sign, num?
+
+gcd                     -> lcm, div?, rem, mod, num?
+lcm                     -> gcd, div?, rem, mod, num?
+exp                     -> exp:, log, mul, num?
+log                     -> log:, exp, quot, num?
+
+//-----------------------------------------------------------------------------
+
+tup                     -> num?, lat?, add:, mul:, sum, prod
+sum                     -> add, add:, prod, tup?
+prod                    -> mul, mul:, sum, tup?
+min_m                   -> min:, min, max, tup?
+max_m                   -> max:, max, min, tup?
+
+inc_e                   -> inc, dec:, add:, tup?
+dec_e                   -> dec, inc:, sub:, tup?
+add_e                   -> add, sum, inc:, sub:, mul:, tup?
+sub_e                   -> sub, dec:, neg:, add:, tup?
+sign_e                  -> sign, neg:, tup?
+neg_e                   -> neg, sign, abs:, sub:, add:, tup?
+abs_e                   -> abs, max:, neg:, tup?
+min_e                   -> min+, min, max:, tup?
+max_e                   -> max+, max, min:, tup?
+
+mul_e                   -> mul, prod, exp:, quot:, rem:, add:, tup?
+quot_e                  -> quot, rem:, mul:, sub:, tup?
+rem_e                   -> rem, mod:, quot:, mul:, tup?
+mod_e                   -> mod, rem:, quot:, mul:, tup?
+exp_e                   -> exp, log:, mul:, tup?
+log_e                   -> log, exp:, quot:, tup?
+
+//-----------------------------------------------------------------------------
+
+select_n                -> remove#, subst#, insert<#, insert>#, length, lat?
+remove_n                -> remove, insert<#, insert>#, subst#, select#, length, lat?
+insert_ln               -> insert<, insert>#, remove#, subst#, select#, length, lat?
+insert_rn               -> insert>, insert<#, remove#, subst#, select#, length, lat?
+subst_n                 -> subst, insert<#, insert>#, remove#, select#, length, lat?
+
+//-----------------------------------------------------------------------------
+
+set                     -> mk_set, subset?, eq_set?, sect?, section, union, rel?, func?, lat?
+mk_set                  -> set?, subset?, eq_set?, sect?, section, union
+sect                    -> section, union, diff, subset?, eq_set?, set?
+subset                  -> eq_set, sect?, section, union, set?
+eq_set                  -> subset?, sect?, section, union, set?
+
+section                 -> section+, sect?, union, diff, subset?, eq_set?, set?
+_union                  -> union+, section, diff, sect?, subset?, eq_set?, set?
+diff                    -> section, union, sect?, subset?, eq_set?, set?
+section_m               -> section, union+, sect?, set?
+union_m                 -> union, section+, set?
+
+pair                    -> first, second, rev, rel?, func?
+first                   -> first:, car, leftmost, second, third, pair?, rev
+second                  -> second:, first, third, pair?, rev
+third                   -> third:, first, second
+rev                     -> rev:, first, second, pair?
+
+leftmost                -> first, first:, car
+first_e                 -> first, leftmost, second:, third+
+second_e                -> second, first:, third:
+third_e                 -> third, first:, second:
+rev_e                   -> rev, first:, second:
+
+rel                     -> func?, pair?, set?
+func                    -> one2one?, rel?, first:, pair?, set?
+one2one                 -> func?, rel?, second:, pair?, set?
+
+//-----------------------------------------------------------------------------
+
+Y                       -> define, lambda
+
+//-----------------------------------------------------------------------------

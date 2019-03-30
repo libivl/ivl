@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=@INSTALL_LIB_DIR@
+includedir=@INSTALL_INCLUDE_DIR@
+
+Name: ivl
+Description: A C++ template library for mathematics: arrays, tuples and functions.
+Version: @IVL_VERSION@
+Libs: -L${libdir} @PKG_LIBS@
+Cflags: -I${includedir} @PKG_CFLAGS@ @STDINTIVL_INSTALL_CFLAGS@
+
